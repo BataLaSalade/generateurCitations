@@ -6,3 +6,7 @@ Créer un générateur de citations
     A défaut d'être intélligible, la phrase doit être cohérente (pas de point d'exclamation au milieu d'une phrase)
 Le programme peut afficher le résultat dans la console JavaScript
 */
+
+// Création d'un tableau pour stocker les premières parties des phrases
+var firstParts = ["Super ", "Méga ", "Docteur(s) ", "Capitaine ", "L'incroyable ", "Fatal ", "Agent ", "L'extraordinaire ", "Lieutenant ", "Commandant ", "Dark ", "Aqua ", "Rocket ", "Inspecteur ", "L'invisible ", "Colonel ", "Le/La mystérieux(se) ", "Amiral ", "Ultra ", "Evil ", "Le/La fantastique ", "Professeur(e) ", "Turbo ", "Le/La spectaculaire "];
+
