@@ -30,5 +30,37 @@ var firstPartsGangsta = ["Joe ", "Bishop ", "Mr ", "Pitbull ", "Frank ", "Dynami
 var secondPartsGangsta = ["Le taulard ", "La gale ", "Gangsta ", "Les deux poings ", "Le rital ", "Le faussaire ", "Poker Face ", "Le boucher ", "Le livreur ", "Le parrain ", "Les yeux fous ", "La machoire ", "McBurnes ", "Du mitard ", "La balle ", "La balance ", "La débrouille ", "Le gitan ", "Le condamné ", "Le gouverneur ", "Le poète ", "La menace ", "Le gentil ", "Pink Lady ", "La ficèle "];
 
 // Création d'un tableau pour stocker les 3eme parties de phrases
-var thirdPartsGangsta = [" avoir mangé sur place après avoir demandé un menu à emporter au MacDo du coin.", " avoir volé l'orange du marchand.", " avoir répondu \"Ciseaux\" quand le représentant des forces de l'ordre a dit \"Papier\".", " avoir goûté aux fruits dans le rayon du supermarché.", " avoir fait un geste déplacé au radar automatique, sans avoir dépassé la limitation de vitesse", "avoir mis un jeton Carrfour dans un caddie Leclerc.", " avoir sonné à la porte du voisin et être parti en courant.", " être passé à un caisse \"moins de 10 articles\" alors qu'il y en avait plus.", " avoir tiré une porte alors qu'il y avait marqué \"Pousser\".", "avoir eu l'air coupable à la sortie sans achat du supermarché.", " avoir paniqué quand le portail antivol du supermarché a sonné.", " avoir pris les escaliers et avoir appuyé sur le bouton d'appel de l'ascenceur à chaque étage.", " avoir mis le volume de la télé sur un nombre impair.", " avoir mangé un \"After Eight\" avant 8h.", " avoir revendu des punitions écrites par anticipation : verbes conjugués, copies de réglement intérieur...", " avoir raccroché au nez des démarcheurs téléphoniques.", " avoir appuyé sur tous les boutons de l'ascenseur avant de sortir.", " avoir tué une heure.", " avoir demandé une chocolatine dans une boulangerie parisienne.", " avoir demandé un pain au chocolat dans une boulangerie Bordelaise.", " avoir braqué le frigo de son pote en pleine nuit.", " avoir vidé les publicités de sa boîte aux lettres dans celles de ces voisins.", " avoir cliqué sur \"Accepter\" sans lire les conditions.", " avoir enlevé sa clé USB sans être passé par \"Retirer en toute sécurité\".", " avoir appelé un numéro au pif et avoir raccrocher direct."];
+var thirdPartsGangsta = [" avoir mangé sur place après avoir demandé un menu à emporter au MacDo du coin.", " avoir volé l'orange du marchand.", " avoir répondu \"Ciseaux\" quand le représentant des forces de l'ordre a dit \"Papier\".", " avoir goûté aux fruits dans le rayon du supermarché.", " avoir fait un geste déplacé au radar automatique, sans avoir dépassé la limitation de vitesse", " avoir mis un jeton Carrfour dans un caddie Leclerc.", " avoir sonné à la porte du voisin et être parti en courant.", " être passé à un caisse \"moins de 10 articles\" alors qu'il y en avait plus.", " avoir tiré une porte alors qu'il y avait marqué \"Pousser\".", " avoir eu l'air coupable à la sortie sans achat du supermarché.", " avoir paniqué quand le portail antivol du supermarché a sonné.", " avoir pris les escaliers et avoir appuyé sur le bouton d'appel de l'ascenceur à chaque étage.", " avoir mis le volume de la télé sur un nombre impair.", " avoir mangé un \"After Eight\" avant 8h.", " avoir revendu des punitions écrites par anticipation : verbes conjugués, copies de réglement intérieur...", " avoir raccroché au nez des démarcheurs téléphoniques.", " avoir appuyé sur tous les boutons de l'ascenseur avant de sortir.", " avoir tué une heure.", " avoir demandé une chocolatine dans une boulangerie parisienne.", " avoir demandé un pain au chocolat dans une boulangerie Bordelaise.", " avoir braqué le frigo de son pote en pleine nuit.", " avoir vidé les publicités de sa boîte aux lettres dans celles de ces voisins.", " avoir cliqué sur \"Accepter\" sans lire les conditions.", " avoir enlevé sa clé USB sans être passé par \"Retirer en toute sécurité\".", " avoir appelé un numéro au pif et avoir raccrocher direct."];
 
+console.log(firstPartsHero.length);
+console.log(secondPartsHero.length);
+console.log(thirdPartsHero.length);
+console.log("-----");
+console.log(firstPartsGangsta.length);
+console.log(secondPartsGangsta.length);
+console.log(thirdPartsGangsta.length);
+
+// Récupération aléatoire d'un item (morceau de phrase) dans chaque tableau
+// Utilisation de la fonction Math.random (renvoie un nombre aléatoire compris entre 0 inclus et 1 exclus)associé aux indices des item de chaque tableau
+// Attention le nombre généré doit être un entier
+// Math.ceil() renvoie le plus petit entier supérieur ou égal à un nombre donnée
+// Math.floor() renvoie le plus grand entier qui est inférieur ou égal à un nombre donnée
+function getRandomIndex (min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+};
+
+console.log("La vie secrete des heros");
+var indexFirstPart = getRandomIndex(0, firstPartsHero.length-1);
+var indexSecondPart = getRandomIndex(0, secondPartsHero.length-1);
+var indexThirdPart = getRandomIndex(0, thirdPartsHero.length-1);
+
+console.log("Pendant ce temps, quelque part dans le monde, " + firstPartsHero[indexFirstPart] + secondPartsHero[indexSecondPart] + thirdPartsHero[indexThirdPart]);
+
+console.log("Epic Gangsta");
+var indexFirstPart = getRandomIndex(0, firstPartsGangsta.length-1);
+var indexSecondPart = getRandomIndex(0, secondPartsGangsta.length-1);
+var indexThirdPart = getRandomIndex(0, thirdPartsGangsta.length-1);
+
+console.log(firstPartsGangsta[indexFirstPart] + secondPartsGangsta[indexSecondPart] + "condamné pour" + thirdPartsGangsta[indexThirdPart]);
