@@ -9,7 +9,6 @@ Le programme peut afficher le résultat dans la console JavaScript
 --> L'utilisateur doit pouvoir choisir le nombre de citations (de 1 à 5)
 --> Choisir entre 2 types de générateurs de citations (donc 2 ensembles de phrases)
 --> Une fois les citations gérérées, l'utilisateur doit pouvoir choisir de générer de nouvelles citations ou d'arrêter le programme
-
 */
 
 // ----- Ensemble de phrase thème Héros -----
@@ -32,6 +31,7 @@ var secondPartsGangsta = ["Le taulard ", "Regard de braises ", "La gale ", "Gang
 // Création d'un tableau pour stocker les 3eme parties de phrases
 var thirdPartsGangsta = [" avoir mangé sur place après avoir demandé un menu à emporter au MacDo du coin.", " avoir volé l'orange du marchand.", " avoir répondu \"Ciseaux\" quand le représentant des forces de l'ordre a dit \"Papier\".", " avoir goûté aux fruits dans le rayon du supermarché.", " avoir fait un geste déplacé au radar automatique, sans avoir dépassé la limitation de vitesse", " avoir mis un jeton Carrfour dans un caddie Leclerc.", " avoir sonné à la porte du voisin et être parti en courant.", " être passé à un caisse \"moins de 10 articles\" alors qu'il y en avait plus.", " avoir tiré une porte alors qu'il y avait marqué \"Pousser\".", " avoir eu l'air coupable à la sortie sans achat du supermarché.", " avoir paniqué quand le portail antivol du supermarché a sonné.", " avoir pris les escaliers et avoir appuyé sur le bouton d'appel de l'ascenceur à chaque étage.", " avoir mis le volume de la télé sur un nombre impair.", " avoir mangé un \"After Eight\" avant 8h.", " avoir revendu des punitions écrites par anticipation : verbes conjugués, copies de réglement intérieur...", " avoir raccroché au nez des démarcheurs téléphoniques.", " avoir appuyé sur tous les boutons de l'ascenseur avant de sortir.", " avoir tué une heure.", " avoir demandé une chocolatine dans une boulangerie parisienne.", " avoir demandé un pain au chocolat dans une boulangerie Bordelaise.", " avoir braqué le frigo de son pote en pleine nuit.", " avoir vidé les publicités de sa boîte aux lettres dans celles de ces voisins.", " avoir cliqué sur \"Accepter\" sans lire les conditions.", " avoir enlevé sa clé USB sans être passé par \"Retirer en toute sécurité\".", " avoir appelé un numéro au pif et avoir raccrocher direct.", " son mauvais goût."];
 
+/*
 console.log(firstPartsHero.length);
 console.log(secondPartsHero.length);
 console.log(thirdPartsHero.length);
@@ -39,6 +39,7 @@ console.log("-----");
 console.log(firstPartsGangsta.length);
 console.log(secondPartsGangsta.length);
 console.log(thirdPartsGangsta.length);
+*/
 
 // Récupération aléatoire d'un item (morceau de phrase) dans chaque tableau
 // Utilisation de la fonction Math.random (renvoie un nombre aléatoire compris entre 0 inclus et 1 exclus)associé aux indices des item de chaque tableau
@@ -53,34 +54,35 @@ function getRandomIndex (min, max) {
 
 // Verification de la génération des deux lots de citation
 // theme 1 : La vie secrète des héros
-console.log("La vie secrete des heros");
+//console.log("La vie secrete des heros");
 var indexFirstPart = getRandomIndex(0, firstPartsHero.length-1);
 var indexSecondPart = getRandomIndex(0, secondPartsHero.length-1);
 var indexThirdPart = getRandomIndex(0, thirdPartsHero.length-1);
 
-console.log("Pendant ce temps, quelque part dans le monde, " + firstPartsHero[indexFirstPart] + secondPartsHero[indexSecondPart] + thirdPartsHero[indexThirdPart]);
+//console.log("Pendant ce temps, quelque part dans le monde, " + firstPartsHero[indexFirstPart] + secondPartsHero[indexSecondPart] + thirdPartsHero[indexThirdPart]);
 // thème 2 : Les pires gangsters
-console.log("Epic Gangsta");
+//console.log("Epic Gangsta");
+
 var indexFirstPart = getRandomIndex(0, firstPartsGangsta.length-1);
 var indexSecondPart = getRandomIndex(0, secondPartsGangsta.length-1);
 var indexThirdPart = getRandomIndex(0, thirdPartsGangsta.length-1);
 
-console.log(firstPartsGangsta[indexFirstPart] + secondPartsGangsta[indexSecondPart] + "a été condamné pour" + thirdPartsGangsta[indexThirdPart]);
+//console.log(firstPartsGangsta[indexFirstPart] + secondPartsGangsta[indexSecondPart] + "a été condamné pour" + thirdPartsGangsta[indexThirdPart]);
 
 //var hero=firstPartsHero.concat(secondPartsHero, thirdPartsHero);
 //console.log(hero.length);
 
 // Création d'un tableau par thème, pour regrouper les différentes parties de phrases
 // Cela permettra de donner le choix à l'utilisateur entre thème 1 ou thème 2 / tab1 ou tab2
-console.log("\n-----\n");
+//console.log("\n-----\n");
 var heroTabs=[firstPartsHero, secondPartsHero, thirdPartsHero];
 var heroSentence = "Pendant ce temps, quelque part dans le monde, " + heroTabs[0][indexFirstPart] + heroTabs[1][indexSecondPart] + heroTabs[2][indexThirdPart];
-console.log(heroSentence);
-console.log("\n-----\n");
+//console.log(heroSentence);
+//console.log("\n-----\n");
 var gangstaTabs=[firstPartsGangsta, secondPartsGangsta, thirdPartsGangsta];
 var gangstaSentence = gangstaTabs[0][indexFirstPart] + gangstaTabs[1][indexSecondPart] + "a été condamné pour" + gangstaTabs[2][indexThirdPart]
-console.log(gangstaSentence);
-console.log("\n-----\n");
+//console.log(gangstaSentence);
+//console.log("\n-----\n");
 
 function getNumberQuote(number) {
     var userQuoteNbCleaned = Number(number);
@@ -121,7 +123,7 @@ while(userTheme !== "0"){
         console.log(getNumberQuote(userQuoteNb));
     }
     else{
-        console.log("Cette fonctionnalité n'existe pas");
+        console.log("\n----- \nCette fonctionnalité n'existe pas \n----- \nChoisissez le thème de vos citations : \n1 - La vie secrète des Héros \n2 - Epic Gangsta \n0 - Quitter\n-----");
     };
 };
 console.log("Au revoir !");
