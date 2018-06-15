@@ -82,16 +82,22 @@ var gangstaSentence = gangstaTabs[0][indexFirstPart] + gangstaTabs[1][indexSecon
 console.log(gangstaSentence);
 console.log("\n-----\n");
 
-function numberQuote(number) {
-    if ((number>0 && number<=5) && (userTheme === "1")) {
-        for(i=0; i<number; i++){
-            console.log(heroSentence);
+function getNumberQuote(number) {
+    var userQuoteNbCleaned = Number(number);
+    if(!isNaN(userQuoteNbCleaned)){
+        if ((number>0 && number<=5) && (userTheme === "1")) {
+            for(i=0; i<number; i++){
+                console.log(heroSentence);
+            };
+        }
+        else if ((number>0 && number<=5) && (userTheme === "2")) {
+            for(i=0; i<number; i++){
+                console.log(gangstaSentence);
+            };
         };
     }
-    else if ((number>0 && number<=5) && (userTheme === "2")) {
-        for(i=0; i<number; i++){
-            console.log(gangstaSentence);
-        };
+    else{
+        console.log("\n----- \nErreur : votre saisie n'est pas un nombre \n-----");
     };
 };
 
@@ -99,31 +105,23 @@ function numberQuote(number) {
 console.log("Bienvenue dans le geekotron ! \n-----\nChoisissez le thème de vos citations : \n1 - La vie secrète des Héros \n2 - Epic Gangsta \n0 - Quitter\n-----");
 
 var userTheme = prompt("Choisissez votre thème");
-var userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)")
+var userQuoteNb = "";
 
 while(userTheme !== "0"){
     if (userTheme === "1") {
-    
+        console.log("\n----- \nLa vie secrete des heros \n-----");
+        console.log("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
+        userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
+        console.log(getNumberQuote(userQuoteNb));
     }
     else if (userTheme === "2") {
-        
+        console.log("\n----- \nEpic Gangsta \n-----");
+        console.log("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
+        userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
+        console.log(getNumberQuote(userQuoteNb));
     }
     else{
         console.log("Cette fonctionnalité n'existe pas");
     };
 };
 console.log("Au revoir !");
-
-
-// choix du nombre de citation
-console.log("Bienvenue dans le geekotron ! \n Vous pouvez générer jusqu'à 5 citations en même temps. \nCombien de citations souhaitez-vous générer ?")
-
-
-
-
-
-/*var userChoiseNb = prompt("Saisissez le nombre de citations (jusqu'à 5)");
-var userChoiseNbCleaned
-for (i=0; i<userChoiseNbCleaned; i++){
-    
-};*/
