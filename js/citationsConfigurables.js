@@ -55,9 +55,12 @@ function getRandomIndex (min, max) {
 // Verification de la génération des deux lots de citation
 // theme 1 : La vie secrète des héros
 //console.log("La vie secrete des heros");
-var indexFirstPart = getRandomIndex(0, firstPartsHero.length-1);
-var indexSecondPart = getRandomIndex(0, secondPartsHero.length-1);
-var indexThirdPart = getRandomIndex(0, thirdPartsHero.length-1);
+var firstPartsLength = firstPartsHero.length;
+var secondPartsLength = secondPartsHero.length;
+var thirdPartsLength = thirdPartsHero.length;
+var indexFirstPart = getRandomIndex(0, firstPartsLength-1);
+var indexSecondPart = getRandomIndex(0, secondPartsLength-1);
+var indexThirdPart = getRandomIndex(0, thirdPartsLength-1);
 
 //console.log("Pendant ce temps, quelque part dans le monde, " + firstPartsHero[indexFirstPart] + secondPartsHero[indexSecondPart] + thirdPartsHero[indexThirdPart]);
 // thème 2 : Les pires gangsters
@@ -114,16 +117,18 @@ while(userTheme !== "0"){
         console.log("\n----- \nLa vie secrete des heros \n-----");
         console.log("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
         userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
-        console.log(getNumberQuote(userQuoteNb));
+        getNumberQuote(userQuoteNb);
     }
     else if (userTheme === "2") {
         console.log("\n----- \nEpic Gangsta \n-----");
         console.log("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
         userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
-        console.log(getNumberQuote(userQuoteNb));
+        getNumberQuote(userQuoteNb);
     }
     else{
-        console.log("\n----- \nCette fonctionnalité n'existe pas \n----- \nChoisissez le thème de vos citations : \n1 - La vie secrète des Héros \n2 - Epic Gangsta \n0 - Quitter\n-----");
-    };
+        console.log("\n----- \nCette fonctionnalité n'existe pas \n----- ");
+    }
+    console.log("\n-----\nChoisissez le thème de vos citations : \n1 - La vie secrète des Héros \n2 - Epic Gangsta \n0 - Quitter\n-----");
+    userTheme = prompt("Choisissez votre thème");
 };
 console.log("Au revoir !");
