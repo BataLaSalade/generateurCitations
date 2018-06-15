@@ -72,16 +72,58 @@ console.log(firstPartsGangsta[indexFirstPart] + secondPartsGangsta[indexSecondPa
 
 // Création d'un tableau par thème, pour regrouper les différentes parties de phrases
 // Cela permettra de donner le choix à l'utilisateur entre thème 1 ou thème 2 / tab1 ou tab2
-
+console.log("\n-----\n");
 var heroTabs=[firstPartsHero, secondPartsHero, thirdPartsHero];
-console.log(heroTabs.length);
-console.log(heroTabs[0]);
-console.log(heroTabs[0][15]);
-console.log("Pendant ce temps, quelque part dans le monde, " + heroTabs[0][15] + heroTabs[1][3] + heroTabs[2][20]);
-console.log("Pendant ce temps, quelque part dans le monde, " + heroTabs[0][indexFirstPart] + heroTabs[1][indexSecondPart] + heroTabs[2][indexThirdPart]);
-
-
+var heroSentence = "Pendant ce temps, quelque part dans le monde, " + heroTabs[0][indexFirstPart] + heroTabs[1][indexSecondPart] + heroTabs[2][indexThirdPart];
+console.log(heroSentence);
+console.log("\n-----\n");
 var gangstaTabs=[firstPartsGangsta, secondPartsGangsta, thirdPartsGangsta];
-console.log(gangstaTabs.length);
-console.log(gangstaTabs[0]);
-console.log(gangstaTabs[0][indexFirstPart] + gangstaTabs[1][indexSecondPart] + "a été condamné pour" + gangstaTabs[2][indexThirdPart]);
+var gangstaSentence = gangstaTabs[0][indexFirstPart] + gangstaTabs[1][indexSecondPart] + "a été condamné pour" + gangstaTabs[2][indexThirdPart]
+console.log(gangstaSentence);
+console.log("\n-----\n");
+
+function numberQuote(number) {
+    if ((number>0 && number<=5) && (userTheme === "1")) {
+        for(i=0; i<number; i++){
+            console.log(heroSentence);
+        };
+    }
+    else if ((number>0 && number<=5) && (userTheme === "2")) {
+        for(i=0; i<number; i++){
+            console.log(gangstaSentence);
+        };
+    };
+};
+
+//choix du thème
+console.log("Bienvenue dans le geekotron ! \n-----\nChoisissez le thème de vos citations : \n1 - La vie secrète des Héros \n2 - Epic Gangsta \n0 - Quitter\n-----");
+
+var userTheme = prompt("Choisissez votre thème");
+var userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)")
+
+while(userTheme !== "0"){
+    if (userTheme === "1") {
+    
+    }
+    else if (userTheme === "2") {
+        
+    }
+    else{
+        console.log("Cette fonctionnalité n'existe pas");
+    };
+};
+console.log("Au revoir !");
+
+
+// choix du nombre de citation
+console.log("Bienvenue dans le geekotron ! \n Vous pouvez générer jusqu'à 5 citations en même temps. \nCombien de citations souhaitez-vous générer ?")
+
+
+
+
+
+/*var userChoiseNb = prompt("Saisissez le nombre de citations (jusqu'à 5)");
+var userChoiseNbCleaned
+for (i=0; i<userChoiseNbCleaned; i++){
+    
+};*/
