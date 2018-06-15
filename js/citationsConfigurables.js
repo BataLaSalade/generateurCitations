@@ -99,13 +99,13 @@ while(userTheme !== "0"){
     if (userTheme === "1") {
         console.log("\n----- \nLa vie secrete des heros \n-----");
         console.log("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
-        userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)\n");
+        userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
         getNumberQuote(userQuoteNb);
     }
     else if (userTheme === "2") {
         console.log("\n----- \nEpic Gangsta \n-----");
         console.log("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
-        userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)\n");
+        userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
         getNumberQuote(userQuoteNb);
     }
     else{
