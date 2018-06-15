@@ -58,17 +58,19 @@ function getRandomIndex (min, max) {
 var firstPartsLength = firstPartsHero.length;
 var secondPartsLength = secondPartsHero.length;
 var thirdPartsLength = thirdPartsHero.length;
-var indexFirstPart = getRandomIndex(0, firstPartsLength-1);
-var indexSecondPart = getRandomIndex(0, secondPartsLength-1);
-var indexThirdPart = getRandomIndex(0, thirdPartsLength-1);
+var indexFirstPart = "";
+var indexSecondPart = "";
+var indexThirdPart = "";
 
 //console.log("Pendant ce temps, quelque part dans le monde, " + firstPartsHero[indexFirstPart] + secondPartsHero[indexSecondPart] + thirdPartsHero[indexThirdPart]);
 // thème 2 : Les pires gangsters
 //console.log("Epic Gangsta");
 
+/*
 var indexFirstPart = getRandomIndex(0, firstPartsGangsta.length-1);
 var indexSecondPart = getRandomIndex(0, secondPartsGangsta.length-1);
 var indexThirdPart = getRandomIndex(0, thirdPartsGangsta.length-1);
+*/
 
 //console.log(firstPartsGangsta[indexFirstPart] + secondPartsGangsta[indexSecondPart] + "a été condamné pour" + thirdPartsGangsta[indexThirdPart]);
 
@@ -79,11 +81,11 @@ var indexThirdPart = getRandomIndex(0, thirdPartsGangsta.length-1);
 // Cela permettra de donner le choix à l'utilisateur entre thème 1 ou thème 2 / tab1 ou tab2
 //console.log("\n-----\n");
 var heroTabs=[firstPartsHero, secondPartsHero, thirdPartsHero];
-var heroSentence = "Pendant ce temps, quelque part dans le monde, " + heroTabs[0][indexFirstPart] + heroTabs[1][indexSecondPart] + heroTabs[2][indexThirdPart];
+var heroSentence = "";
 //console.log(heroSentence);
 //console.log("\n-----\n");
 var gangstaTabs=[firstPartsGangsta, secondPartsGangsta, thirdPartsGangsta];
-var gangstaSentence = gangstaTabs[0][indexFirstPart] + gangstaTabs[1][indexSecondPart] + "a été condamné pour" + gangstaTabs[2][indexThirdPart]
+var gangstaSentence = "";
 //console.log(gangstaSentence);
 //console.log("\n-----\n");
 
@@ -92,11 +94,19 @@ function getNumberQuote(number) {
     if(!isNaN(userQuoteNbCleaned)){
         if ((number>0 && number<=5) && (userTheme === "1")) {
             for(i=0; i<number; i++){
+                indexFirstPart = getRandomIndex(0, firstPartsLength-1);
+                indexSecondPart = getRandomIndex(0, secondPartsLength-1);
+                indexThirdPart = getRandomIndex(0, thirdPartsLength-1);
+                heroSentence = "Pendant ce temps, quelque part dans le monde, " + heroTabs[0][indexFirstPart] + heroTabs[1][indexSecondPart] + heroTabs[2][indexThirdPart];
                 console.log(heroSentence);
             };
         }
         else if ((number>0 && number<=5) && (userTheme === "2")) {
             for(i=0; i<number; i++){
+                indexFirstPart = getRandomIndex(0, firstPartsLength-1);
+                indexSecondPart = getRandomIndex(0, secondPartsLength-1);
+                indexThirdPart = getRandomIndex(0, thirdPartsLength-1);
+                gangstaSentence = gangstaTabs[0][indexFirstPart] + gangstaTabs[1][indexSecondPart] + "a été condamné pour" + gangstaTabs[2][indexThirdPart]
                 console.log(gangstaSentence);
             };
         };
