@@ -68,7 +68,7 @@ function getNumberQuote(number) {
                 indexFirstPart = getRandomIndex(0, firstPartsLength-1);
                 indexSecondPart = getRandomIndex(0, secondPartsLength-1);
                 indexThirdPart = getRandomIndex(0, thirdPartsLength-1);
-                heroSentence = "Pendant ce temps, quelque part dans le monde, " + heroTabs[0][indexFirstPart] + heroTabs[1][indexSecondPart] + heroTabs[2][indexThirdPart];
+                heroSentence = heroTabs[0][indexFirstPart] + heroTabs[1][indexSecondPart] + heroTabs[2][indexThirdPart];
                 console.log(heroSentence);
             };
         }
@@ -100,6 +100,7 @@ while(userTheme !== "0"){
         console.log("\n----- \nLa vie secrete des heros \n-----");
         console.log("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
         userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
+        console.log("\nPendant ce temps, quelque part dans le monde ...\n-----");
         getNumberQuote(userQuoteNb);
     }
     else if (userTheme === "2") {
