@@ -1,0 +1,168 @@
+/*00.Header*/
+/*01.Accueil*/
+/*02.A propos*/
+/*03.Actualité*/
+/*04.Films*/
+/*05.Réservation*/
+/*06.Contact*/
+/*07.Footer*/
+
+/* FONT */
+/* 	Montserrat:400,700|Open+Sans:400,600,700
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
+/*COLORS*/
+
+	/*black :#1f2c34;
+	red : #e96b55;
+	green :#5eab99;
+	yellow:#f0f193;
+	brown:#cac1bd;*/
+
+@import "variables";
+
+/*Paramètre généraux*/
+body, html{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background-color: $green;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.container-fluid{
+	padding: 0;
+}
+
+.container{
+	background-color: lightblue;
+	padding: 0;
+}
+
+.row{
+	margin: 0;
+}
+
+[class*="col"] {
+	padding: 0;
+}
+
+aside{
+	background-color: grey;
+	padding: 0;
+}
+
+a, a:hover{
+	text-decoration: none;
+}
+
+h2{
+	font-family: 'Montserrat', 'sans-serif';
+	font-weight: bold;
+	text-transform: uppercase;
+	border-left:5px solid #e96b55;
+	line-height: 1.3;
+	padding-left: 15px;
+	margin-top: 20%;
+}
+
+/*00.Header*/
+.header{
+	background-color: #1f2c34;
+	height:80px;
+	line-height: 80px;
+}
+
+.logo{
+	display: inline-block;
+	float: left;
+}
+
+.menu{
+	display: inline-block;
+	float: right;
+}
+
+nav a{
+	color: white;
+	padding-right: 15px;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 0.8rem;
+}
+
+.active{
+	color: #5eab99;
+}
+
+nav a:hover{
+	color: #5eab99;
+}
+
+.header a img 
+{
+	height: 60px;
+}
+
+/*01.Accueil*/
+.welcome{
+	/*Sans padding on pert le comportement container-fluid, donc :*/
+	padding-top: 1px;
+	background-color: #1f2c34;
+}
+.welcome aside {
+	margin: 0;
+	padding: 0;
+	background: url("../images/festivalFilmsPleinAir.png") no-repeat bottom ;
+	background-size: 100% auto;
+	height: auto;
+}
+.welcome article{
+	padding: 30px 15px;
+	background-color: #e96b55;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.date{
+	padding: 30px 0px 45px;
+}
+
+article span {
+	display: block;
+	font-family: 'Montserrat','sans-serif';
+	font-weight: 700;
+
+}
+
+.textshadow{
+	font-size: 4rem;
+	text-shadow: 5px 0px 0px rgba(94, 171, 153, 1)
+}
+
+.welcome .btn-custom{
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #f0f193;
+	border: 2px solid #f0f193;
+	border-radius: 25px;
+	background-color: transparent;
+	margin-top: 30px;
+}
+
+/*02.A propos*/
+
+/*03.Actualité*/
+
+/*04.Films*/
+
+/*05.Réservation*/
+
+/*06.Contact*/
+
+/*07.Footer*/
