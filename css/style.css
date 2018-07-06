@@ -32,6 +32,7 @@ body, html{
 body{
 	background-color: #f1f1f1;
 	font-family: 'consolas', sans-serif;
+	color: #2c2c2c;
 }
 
 .container-fluid{
@@ -56,5 +57,42 @@ a, a:hover{
 	text-decoration: none;
 }
 
+#top-bar{
+	background: #2c2c2c;
+	height: 2rem;
+}
 
+.container-fluid.welcome, .container-fluid.setting, .container-fluid.citations{
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
 
+.welcome {
+	background: #ffcd44;
+	text-align: center;
+
+}
+.welcome h2{
+	font-size: 3rem;
+}
+h1{
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 4rem;
+	text-transform: uppercase;
+}
+
+.container-fluid.setting h2{
+	font-size: 1.5rem;
+}
+.btn{
+	background: #5795ad;
+	color: white;
+}
+
+.container-fluid.citations{
+	background: #f38079;
+}
+.citations h2{
+	text-align: center;
+	color: white;
+}
