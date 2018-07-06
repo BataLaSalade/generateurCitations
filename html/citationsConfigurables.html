@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Générateur de citations configurables</title>
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <script src="../js/citationsConfigurables.js"></script>
+    <div id="top-bar"></div>
+    <div class="container-fluid welcome">
+        <div class="container">
+            <h2>Welcome to</h2>
+            <img src="../img/Robot.png" alt="Robot geekotron">
+            <h1>le <span class="geekotron">Geekotron</span></h1>
+        </div>
+    </div>
+    <div class="container-fluid setting">
+        <div class="container">
+            <div class="row">
+                <h2>Choisis le thème de tes citations</h2>
+            </div>
+            <div class="row">
+                <div class="btn hero">La vie secrète des Héros</div>
+                <div class="btn gangsta">
+                    Epic gangsta
+                </div>
+            </div>
+            <div class="row">
+                <h2>Choisi le nombre de citations</h2>
+            </div>
+            <div class="row">
+                <form>
+                    <div class="form-group">
+                        <label for="place">Nb. citations (5 max.)</label>
+                        <input class="form-control" type="number" name="place" id="place" min="1" max="5" value="1">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid citations">
+        <div class="container">
+            <h2>La vie secrète des Héros</h2>
+        </div>
+    </div>
+    <div class="container-fluid" id=" bottom"></div>
+
+    <!--<script src="../js/citationsConfigurables.js"></script>-->
 </body>
 </html>
