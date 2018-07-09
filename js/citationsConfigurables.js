@@ -60,7 +60,7 @@ var gangstaTabs=[firstPartsGangsta, secondPartsGangsta, thirdPartsGangsta];
 var gangstaSentence = "";
 
 // Fonction permettant de générer aléatoirement le nombre de citations demandées par l'utilisateur
-function getNumberQuote(number) {
+/*function getNumberQuote(number) {
     var userQuoteNbCleaned = Number(number);
     if(!isNaN(userQuoteNbCleaned)){
         if ((number>0 && number<=5) && (userTheme === "1")) {
@@ -85,8 +85,39 @@ function getNumberQuote(number) {
     else{
         console.log("\n----- \nErreur : votre saisie n'est pas un nombre \n-----");
     };
-};
+};*/
+//////
+var containerQuote = document.getElementById("citations");
+containerQuote.innerHTML+= "";
+var heroBtn = document.getElementById("hero");
+var gangstaBtn = document.getElementById("gangsta");
+var themeTitle = document.createElement("h2");
 
+
+heroBtn.addEventListener("click", function(){
+    
+    //var nbQuote = document.getElementById("nbQuote");
+    var currentNbQuote = NbQuote.value;
+    themeTitle.textContent = "La vie secrète des Héros";
+    document.getElementById("citations").appendChild(themeTitle);
+    
+    for(i=0; i<currentNbQuote; i++){
+        indexFirstPart = getRandomIndex(0, firstPartsLength-1);
+        indexSecondPart = getRandomIndex(0, secondPartsLength-1);
+        indexThirdPart = getRandomIndex(0, thirdPartsLength-1);
+        heroSentence = heroTabs[0][indexFirstPart] + heroTabs[1][indexSecondPart] + heroTabs[2][indexThirdPart];
+        console.log(heroSentence);
+        var newQuote = document.createElement("p");
+        newQuote.textContent = heroSentence;
+        document.getElementById("citations").appendChild(newQuote);
+        
+    };
+    
+});
+
+
+///////
+/*
 // Début du programme
 console.log("Bienvenue dans le geekotron ! \n-----\nChoisissez le thème de vos citations : \n1 - La vie secrète des Héros \n2 - Epic Gangsta \n0 - Quitter\n-----");
 
@@ -116,3 +147,4 @@ while(userTheme !== "0"){
     userTheme = prompt("Choisissez votre thème");
 };
 console.log("Au revoir !");
+*/
