@@ -33,7 +33,6 @@ var thirdPartsGangsta = [" avoir mangé sur place après avoir demandé un menu 
 
 
 // Création d'une fonction permettant de générer un entier qui prendra comme parametre min = 1er indice du tableau et max = dernier indice du tableau
-
 function getRandomIndex (min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -59,43 +58,15 @@ var heroSentence = "";
 var gangstaTabs=[firstPartsGangsta, secondPartsGangsta, thirdPartsGangsta];
 var gangstaSentence = "";
 
-// Fonction permettant de générer aléatoirement le nombre de citations demandées par l'utilisateur
-/*function getNumberQuote(number) {
-    var userQuoteNbCleaned = Number(number);
-    if(!isNaN(userQuoteNbCleaned)){
-        if ((number>0 && number<=5) && (userTheme === "1")) {
-            for(i=0; i<number; i++){
-                indexFirstPart = getRandomIndex(0, firstPartsLength-1);
-                indexSecondPart = getRandomIndex(0, secondPartsLength-1);
-                indexThirdPart = getRandomIndex(0, thirdPartsLength-1);
-                heroSentence = heroTabs[0][indexFirstPart] + heroTabs[1][indexSecondPart] + heroTabs[2][indexThirdPart];
-                console.log(heroSentence);
-            };
-        }
-        else if ((number>0 && number<=5) && (userTheme === "2")) {
-            for(i=0; i<number; i++){
-                indexFirstPart = getRandomIndex(0, firstPartsLength-1);
-                indexSecondPart = getRandomIndex(0, secondPartsLength-1);
-                indexThirdPart = getRandomIndex(0, thirdPartsLength-1);
-                gangstaSentence = gangstaTabs[0][indexFirstPart] + gangstaTabs[1][indexSecondPart] + "a été condamné pour" + gangstaTabs[2][indexThirdPart]
-                console.log(gangstaSentence);
-            };
-        };
-    }
-    else{
-        console.log("\n----- \nErreur : votre saisie n'est pas un nombre \n-----");
-    };
-};*/
-//////
+
 var containerQuote = document.getElementById("citations");
-containerQuote.innerHTML+= "";
 var heroBtn = document.getElementById("hero");
 var gangstaBtn = document.getElementById("gangsta");
 var themeTitle = document.createElement("h2");
 
 
 heroBtn.addEventListener("click", function(){
-    
+    containerQuote.innerHTML= "";
     //var nbQuote = document.getElementById("nbQuote");
     var currentNbQuote = NbQuote.value;
     themeTitle.textContent = "La vie secrète des Héros";
@@ -106,45 +77,26 @@ heroBtn.addEventListener("click", function(){
         indexSecondPart = getRandomIndex(0, secondPartsLength-1);
         indexThirdPart = getRandomIndex(0, thirdPartsLength-1);
         heroSentence = heroTabs[0][indexFirstPart] + heroTabs[1][indexSecondPart] + heroTabs[2][indexThirdPart];
-        console.log(heroSentence);
         var newQuote = document.createElement("p");
         newQuote.textContent = heroSentence;
         document.getElementById("citations").appendChild(newQuote);
-        
     };
-    
 });
 
-
-///////
-/*
-// Début du programme
-console.log("Bienvenue dans le geekotron ! \n-----\nChoisissez le thème de vos citations : \n1 - La vie secrète des Héros \n2 - Epic Gangsta \n0 - Quitter\n-----");
-
-// Variables d'interaction avec l'utilisateur
-var userTheme = prompt("Choisissez votre thème");
-var userQuoteNb = "";
-
-// script de gestion des thèmes des citations
-while(userTheme !== "0"){
-    if (userTheme === "1") {
-        console.log("\n----- \nLa vie secrete des heros \n-----");
-        console.log("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
-        userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
-        console.log("\nPendant ce temps, quelque part dans le monde ...\n-----");
-        getNumberQuote(userQuoteNb);
-    }
-    else if (userTheme === "2") {
-        console.log("\n----- \nEpic Gangsta \n-----");
-        console.log("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
-        userQuoteNb = prompt("Combien de citations souhaitez-vous ? (jusqu'à 5 max.)");
-        getNumberQuote(userQuoteNb);
-    }
-    else{
-        console.log("\n----- \nCette fonctionnalité n'existe pas \n----- ");
-    }
-    console.log("\n-----\nChoisissez le thème de vos citations : \n1 - La vie secrète des Héros \n2 - Epic Gangsta \n0 - Quitter\n-----");
-    userTheme = prompt("Choisissez votre thème");
-};
-console.log("Au revoir !");
-*/
+gangstaBtn.addEventListener("click", function(){
+    containerQuote.innerHTML= "";
+    //var nbQuote = document.getElementById("nbQuote");
+    var currentNbQuote = NbQuote.value;
+    themeTitle.textContent = "Epic Gangsta";
+    document.getElementById("citations").appendChild(themeTitle);
+    
+    for(i=0; i<currentNbQuote; i++){
+        indexFirstPart = getRandomIndex(0, firstPartsLength-1);
+        indexSecondPart = getRandomIndex(0, secondPartsLength-1);
+        indexThirdPart = getRandomIndex(0, thirdPartsLength-1);
+        gangstaSentence = gangstaTabs[0][indexFirstPart] + gangstaTabs[1][indexSecondPart] + "a été condamné pour" + gangstaTabs[2][indexThirdPart];
+        var newQuote = document.createElement("p");
+        newQuote.textContent = gangstaSentence;
+        document.getElementById("citations").appendChild(newQuote);
+    };
+});
