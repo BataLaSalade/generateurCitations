@@ -62,6 +62,7 @@ var gangstaSentence = "";
 var containerQuote = document.getElementById("citations");
 var heroBtn = document.getElementById("hero");
 var gangstaBtn = document.getElementById("gangsta");
+
 var themeTitle = document.createElement("h2");
 
 

@@ -63,7 +63,8 @@ a, a:hover{
 }
 #bottom-bar{
 	background: #2c2c2c;
-	height: 2rem;
+	height: 4rem;
+	padding: 0.5rem;
 }
 
 .container-fluid.welcome, .container-fluid.setting, .container-fluid.citations{
